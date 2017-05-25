@@ -5,12 +5,8 @@ $(document).ready(function() {
 
     var wordArray = words.split(" ");
 
-    var newArray = [];
-
-    wordArray.forEach(function(word) {
-      if (word.length > 3) {
-        newArray.push(word);
-      }
+    var newArray = wordArray.filter(function(word) {
+      return (word.length > 3)
     });
 
     $("#yourSentence").text(newArray.reverse().join());
